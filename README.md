@@ -37,33 +37,42 @@ A. What You Need to Know
 
 Algorithms           
 ----------------------------------------------------------------------------------------------------------------
-Breadth First Search       1. Data Structures and Algorithms with JavaScript, Ch. 10 page: 339
-^^^^^   
-Depth First Search         1. Data Structures and Algorithms with JavaScript, Ch. 10 page: 339
-^^^^^   
-Binary Search              1. Data Structures and Algorithms with JavaScript, Ch. 10 & 13 Binary Search
-^^^^^   
-Merge Sort                 1. Data Structures and Algorithms with JavaScript, Ch. 12 Sorting Algorithms
-^^^^^   
-Quick Sort                 1. Data Structures and Algorithms with JavaScript, Ch. 12 Sorting Algorithms
-^^^^^   
-Tree Insert/Find/etc       .
-^^^^^   
+
+##### Breadth First Search       
+- Data Structures and Algorithms with JavaScript, Ch. 10 page: 339
+
+##### Depth First Search         
+- Data Structures and Algorithms with JavaScript, Ch. 10 page: 339
+
+##### Binary Search              
+- Data Structures and Algorithms with JavaScript, Ch. 10 & 13 Binary Search
+
+##### Merge Sort                 
+- Data Structures and Algorithms with JavaScript, Ch. 12 Sorting Algorithms
+
+##### Quick Sort                 
+- Data Structures and Algorithms with JavaScript, Ch. 12 Sorting Algorithms
+
+##### Tree Insert/Find/etc       
+
 
 Concepts                    Javascript Articles/Videos
 ----------------------------------------------------------------------------------------------------------------
-Bit Manipulation           .
-^^^^^   
-Singleton Design Pattern   .
-^^^^^   
-Factory Design Pattern     .
-^^^^^   
-Memory (Stack vs Heap)     .
-^^^^^   
-Recursion:                 1. Data Structures and Algorithms with JavaScript, Ch. 14 Advanced Algorithms
-^^^^^                      2. Recursion linked lists: http://bit.ly/1aoMf6T
-Big-O Time:                1. Plain English explanation of Big O: http://bit.ly/1yzK0cE
-^^^^^                      2. Video: http://bit.ly/1z1vfKv
+##### Bit Manipulation
+
+##### Singleton Design Pattern
+
+##### Factory Design Pattern
+
+##### Memory (Stack vs Heap)     .
+
+##### Recursion:
+- Data Structures and Algorithms with JavaScript, Ch. 14 Advanced Algorithms
+- [Recursion linked lists](http://bit.ly/1aoMf6T)
+
+##### Big-O Time:
+- [Plain English explanation of Big O](http://bit.ly/1yzK0cE)
+- [Video](http://bit.ly/1z1vfKv)
 
 
 
