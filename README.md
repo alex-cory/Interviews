@@ -1,7 +1,6 @@
 Table of Contents
 =================
 [A. What You Need to Know](#a-what-you-need-to-know)
-  [Data Structures
 
 [B. Interview Questions](#b-interview-questions)
 
@@ -63,10 +62,9 @@ A. What You Need to Know
 
 
 # B. Interview Questions
-Section                                                        Times Completed Without Help
-----------------------------------------------------------------------------------------------------------------
-Data Structures
 
+
+<!--
   Chapter 1 | Arrays and Strings
   
     1.1 Has Unique Chars Algorithm                         0
@@ -186,6 +184,6 @@ Additional Review Problems
   Chapter 20 | Hard
 
 
-
+-->
 
 
