@@ -19,65 +19,45 @@ Table of Contents
 A. What You Need to Know
 ========================
 
-| Data Structures |    Javascript Articles                                                        |    Read/Watchd?|
-| --------------- | ----------------------------------------------------------------------------- | ------- |
-|  Linked Lists   |     1. Data Structures and Algorithms with JavaScript, Ch. 6 Linked Lists     |        ✓|
-|                 |     2. http://bit.ly/1CyeMOk                                                  |        X|
-|                 |     3. http://bit.ly/1GSd4gA                                                  |        X|
-|  Binary Trees   |     1. Data Structures and Algorithms with JavaScript, Ch. 10 Binary Trees    |        ✓|
-|                 |     2. http://bit.ly/1Cy9LoW                                                  |        X|
-| Tries           |     1. [Javascript Implementation 1](http://bit.ly/1NodIb5)                   |        X|
-|                 |     2. [Javascript Implementation 2](http://bit.ly/1J9hLS7)                   |        X|
-| Stacks          |     1. Data Structures and Algorithms with JavaScript, Ch. 4 Stacks (ibooks)  |        ✓|
-|                 |     2. http://bit.ly/1Cyc7Eb                                                  |        X|
-| Queues          |     1. Data Structures and Algorithms with JavaScript, Ch. 5 Queues           |        ✓|
-|                 |     2. http://bit.ly/1NobhFp                                                  |        X|
-|                 |     3. http://bit.ly/1Cyc4sa                                                  |        X|
-|Vectors/ArrayLists|    1. Data Structures and Algorithms with JavaScript, Ch. 2 Arrays           |        X|
-|                 |     2. http://bit.ly/1CydW3X (Array Object)                                   |        X|
-| Hash Tables     |     1. Data Structures and Algorithms with JavaScript, Ch. 8 Hashing          |        ✓|
-|                 |     2. http://bit.ly/1az0Gph                                                  |        X|
-|                 |     3. http://bit.ly/1CyesPG (Associative Array)                              |        X|
+| Data Structures |    Javascript Articles                                                        |
+| --------------- | ----------------------------------------------------------------------------- |
+|  Linked Lists   |     1. Data Structures and Algorithms with JavaScript, Ch. 6 Linked Lists     |
+|                 |     2. http://bit.ly/1CyeMOk                                                  |
+|                 |     3. http://bit.ly/1GSd4gA                                                  |
+|  Binary Trees   |     1. Data Structures and Algorithms with JavaScript, Ch. 10 Binary Trees    |
+|                 |     2. http://bit.ly/1Cy9LoW                                                  |
+| Tries           |     1. [Javascript Implementation 1](http://bit.ly/1NodIb5)                   |
+|                 |     2. [Javascript Implementation 2](http://bit.ly/1J9hLS7)                   |
+| Stacks          |     1. Data Structures and Algorithms with JavaScript, Ch. 4 Stacks (ibooks)  |
+|                 |     2. http://bit.ly/1Cyc7Eb                                                  |
+| Queues          |     1. Data Structures and Algorithms with JavaScript, Ch. 5 Queues           |
+|                 |     2. http://bit.ly/1NobhFp                                                  |
+|                 |     3. http://bit.ly/1Cyc4sa                                                  |
+|Vectors/ArrayLists|    1. Data Structures and Algorithms with JavaScript, Ch. 2 Arrays           |
+|                 |     2. http://bit.ly/1CydW3X (Array Object)                                   |
+| Hash Tables     |     1. Data Structures and Algorithms with JavaScript, Ch. 8 Hashing          |
+|                 |     2. http://bit.ly/1az0Gph                                                  |
+|                 |     3. http://bit.ly/1CyesPG (Associative Array)                              |
+
+| Algorithms            |                                                                         |
+| --------------------- | ----------------------------------------------------------------------- |
+| Breadth First Search  |    Data Structures and Algorithms with JavaScript, Ch. 10 page: 339     |
+| Depth First Search    | Data Structures and Algorithms with JavaScript, Ch. 10 page: 339        |
+| Binary Search         | Data Structures and Algorithms with JavaScript, Ch. 10 & 13 Binary Search |
+| Merge Sort            | Data Structures and Algorithms with JavaScript, Ch. 12 Sorting Algorithms |
+| Quick Sort            | Data Structures and Algorithms with JavaScript, Ch. 12 Sorting Algorithms |
+| Tree Insert/Find/etc  |    |
 
 
-Algorithms           
-----------------------------------------------------------------------------------------------------------------
 
-##### Breadth First Search       
-- Data Structures and Algorithms with JavaScript, Ch. 10 page: 339
-
-##### Depth First Search         
-- Data Structures and Algorithms with JavaScript, Ch. 10 page: 339
-
-##### Binary Search              
-- Data Structures and Algorithms with JavaScript, Ch. 10 & 13 Binary Search
-
-##### Merge Sort                 
-- Data Structures and Algorithms with JavaScript, Ch. 12 Sorting Algorithms
-
-##### Quick Sort                 
-- Data Structures and Algorithms with JavaScript, Ch. 12 Sorting Algorithms
-
-##### Tree Insert/Find/etc       
-
-
-Concepts                    Javascript Articles/Videos
-----------------------------------------------------------------------------------------------------------------
-##### Bit Manipulation
-
-##### Singleton Design Pattern
-
-##### Factory Design Pattern
-
-##### Memory (Stack vs Heap)     .
-
-##### Recursion:
-- Data Structures and Algorithms with JavaScript, Ch. 14 Advanced Algorithms
-- [Recursion linked lists](http://bit.ly/1aoMf6T)
-
-##### Big-O Time:
-- [Plain English explanation of Big O](http://bit.ly/1yzK0cE)
-- [Video](http://bit.ly/1z1vfKv)
+| Concepts              | Javascript Articles/Videos                                               |
+| --------------------- | ------------------------------------------------------------------------ |
+| Bit Manipulation      |   |
+| Singleton Design Pattern |   |
+| Factory Design Pattern |    |
+| Memory (Stack vs Heap) |    |
+| Recursion              | Data Structures and Algorithms with JavaScript, Ch. 14 Advanced Algorithms [Recursion linked lists](http://bit.ly/1aoMf6T) |
+| Big-O Time             | [Plain English explanation of Big O](http://bit.ly/1yzK0cE) [Video](http://bit.ly/1z1vfKv) |
 
 
 
