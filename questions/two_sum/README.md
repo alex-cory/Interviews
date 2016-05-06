@@ -8,7 +8,11 @@ You may assume that each input would have exactly one solution.
 
 Brute Force
 -----------
-[![](../../assets/run_code.png)](https://repl.it/COEo)
+
+| Time Complexity | Space Complexity |
+| --------------- | ---------------- |
+| O(n²)           | O(1)             |
+
 ```js
 function twoSum(nums, target) {
   var numA
@@ -29,9 +33,16 @@ function twoSum(nums, target) {
 }
 ```
 
+[![a](../../assets/run_code.png)](https://repl.it/COEo)
+
+
 One Pass
 --------
-[![](../../assets/run_code.png)](https://repl.it/COFU)
+
+| Time Complexity | Space Complexity |
+| --------------- | ---------------- |
+| O(n)            | O(1)             |
+
 ```js
 function twoSum(nums, target) {
   var map = []
@@ -51,6 +62,10 @@ function twoSum(nums, target) {
   console.log('There were no matches :(')
 }
 ```
+
+[![a](../../assets/run_code.png)](https://repl.it/COFU)
+
+
 ToDo:
  - [ ] finish understanding one pass solution
  - [ ] complete and understand recursive solution
