@@ -4,9 +4,11 @@ Given an array of integers, return indices of the two numbers such that they add
 
 You may assume that each input would have exactly one solution.
 
+
+
 Brute Force
 -----------
-[Run Code Here](https://repl.it/COEo)
+[![](../../assets/run_code.png)](https://repl.it/COEo)
 ```js
 function twoSum(nums, target) {
   var numA
@@ -29,7 +31,7 @@ function twoSum(nums, target) {
 
 One Pass
 --------
-[Run Code Here]()
+[![](../../assets/run_code.png)](https://repl.it/COFU)
 ```js
 function twoSum(nums, target) {
   var map = []
@@ -38,15 +40,15 @@ function twoSum(nums, target) {
   for (var i = 0; i < nums.length; i++) {
     currNum = nums[i]
     compliment = target - currNum
-    if (map[compliment] != null) {
+    if (map[compliment]) {
       var currNumIndex = i
       var complimentIndex = map[compliment]
-      console.log([currNumIndex, complimentIndex]);
-      return // [map[compliment], i];
+      console.log('Answer:', [currNumIndex, complimentIndex])
+      return // [currNumIndex, complimentIndex]
     }
     map[currNum] = i
   }
-  console.log('There were no matches :(');
+  console.log('There were no matches :(')
 }
 ```
 ToDo:
