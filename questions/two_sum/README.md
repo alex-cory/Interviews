@@ -33,7 +33,10 @@ function twoSum(nums, target) {
 }
 ```
 
-[![a](../../assets/run_code.png)](https://repl.it/COEo)
+<a href="https://repl.it/COEo" target="_blank"><img src="../../assets/run_code.png"/></a>
+
+
+<!--[![a](../../assets/run_code.png)](https://repl.it/COEo)-->
 
 
 One Pass
