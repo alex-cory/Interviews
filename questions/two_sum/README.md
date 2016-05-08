@@ -32,11 +32,9 @@ function twoSum(nums, target) {
   console.log('Answer: No two sum solution :(');
 }
 ```
-
 <a href="https://repl.it/COEo" target="_blank"><img src="../../assets/run_code.png"/></a>
 
-
-<!--[![a](../../assets/run_code.png)](https://repl.it/COEo)-->
+<!--[![a](](https://repl.it/COEo)-->
 
 
 One Pass
