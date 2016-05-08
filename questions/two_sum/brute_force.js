@@ -9,8 +9,6 @@
 function twoSum(nums, target) {
   var firstNum
   var sedondNum
-  console.log('Your array: ',  nums);
-
   for (var i = 0; i < nums.length; i++) {
     firstNum = nums[i]
     for (var j = i + 1; j < nums.length; j++) {
@@ -18,8 +16,7 @@ function twoSum(nums, target) {
       // console.log('Does target:' + target + ' = firstNum:' + firstNum + ' + sedondNum: ' + sedondNum + '?');
       if (target == firstNum + sedondNum) {
           console.log('Answer: ', [i, j]);
-          return
-          // return [i, j]
+          return // [i, j]
       }
     }
   }
@@ -27,4 +24,5 @@ function twoSum(nums, target) {
 }
 
 var nums = [9, 1, 7, 3, 8]
+console.log('Your array: ',  nums);
 twoSum(nums, 9)

@@ -13,7 +13,7 @@ function twoSum(nums, target) {
   for (var i = 0; i < nums.length; i++) {
     currNum = nums[i]
     compliment = target - currNum
-    if (map[compliment] != null) {
+    if (map[compliment]) {
       var currNumIndex = i
       var complimentIndex = map[compliment]
       console.log([currNumIndex, complimentIndex]);
