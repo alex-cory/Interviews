@@ -1,581 +1,575 @@
-# Python Concepts
-
-###Q:
-What is Python? State some programming language features of Python.
-
-###A:
-- interpreted
-- modules
-- threads
-- exceptions
-- automatic memory management
+Sorting Algorithms in JavaScript Es6
+============================
 
 
-###Q:
-Explain how Python is interpreted.
-
-###A:
-Python runs source code written by the programmer into an intermediate language which is
-again translated into native/machine language that is executed.
-
-###Q:
-What are the rules for local and global variables in Python?
-
-###A:
-If a variable is defined outside of a function, it is inherently global. Inside the function
-means it's local. If we want to make it global we need to explicitly define it as global.
-
-Ex:
-```
-#!/usr/bin/python
-# Filename: variable_localglobal.py
-def fun1(a):
-            print 'a:', a
-            a= 33;
-            print 'local a: ', a
-a = 100
-fun1(a)
-print 'a outside fun1:', a
-def fun2():
-           global b
-           print 'b: ', b
-           b = 33
-           print 'global b:', b
-b =100
-fun2()
-print 'b outside fun2', b
-
--------------------------------------------------------
-
-Output
-$ python variable_localglobal.py
-a: 100
-local a: 33
-a outside fun1: 100
-b :100
-global b: 33
-b outside fun2: 33
-```
+### Table of Contents
+**[Insertion Sort](#insertion-sort)**  
+**[Bubble Sort](#bubble-sort)**  
+**[Selection Sort](#selection-sort)**  
+**[Merge Sort](#merge-sort)**  
+**[Quick Sort](#quick-sort)**  
+**[Shell Sort](#shell-sort)**  
+**[Resources](#overall-resources)**  
 
 
-###Q:
-Explain the dictionary in Python.
 
-###A:
-- Python's built-in data type is dictionary, which defines a one-to-one relationship between keys and values
-- Consist of pairs of keys and values
-- Indexed by keys
-- Similar to associative array or hash table in other languages
+Insertion Sort
+--------------
 
-Ex:
-```
-❯ dict = {'India': 'Bharat', 'Angel': ‘Mother Teresa’, 'Cartoon': 'Mickey'}
-❯ print dict[India]
-Bharat
-❯ print dict[Angel]
-Mother Teresa
-```
+- **Definition:** This algorithm separates an array/list of items into two parts, sorted, and unsorted.
+The sorted part is on the left.
 
+<!--
+| Time Complexity                  | Space Complexity    |
+|  Best  |   Average   |   Worst   |                     |
+| -------------------------------- | :-----------------: |
+| `O(n)` |  `O(n²)`    |  `O(n²)`  |       `O(1)`        |
+-->
+<table>
+<thead>
+<tr>
+  <tr>
+    <th colspan="3" scope="colgroup">Time Complexity</th>
+    <th colspan="1" scope="colgroup">Space Complexity</th>
+  </tr>
+<th>Best</th>
+<th>Average</th>
+<th>Worst</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>O(n)</code></td>
+<td><code>O(n²)</code></td>
+<td><code>O(n²)</code></td>
+<td><code>O(1)</code></td>
+</tr>
+</tbody>
+</table>
 
-###Q:
-How do we share global variables accross modules in Python?
+#### Implementation
 
-###A:
-- Create a config file and import it into each module.
+```javascript
+function insertionSort(items) {
 
-Ex:
-```
-config.py :
-a=0
-b=0
-c=0
+    var value,                  // the value currently being compared
+    i,                          // index into unsorted section
+    j;                          // index into sorted section
 
-module1.py:
-import config
-config.a = 1
-config.b =2
-config.c=3
-print “ a, b & resp. are : “ , config.a, config.b, config.c
-------------------------------------------------------------------------
-output of module1.py will be
-1 2 3
+    for (i=0; i < items.length; i++) {
+
+        // store the current value because it may shift later
+        value = items[i];
+
+        /*
+         * Whenever the value in the sorted section is greater than the value
+         * in the unsorted section, shift all items in the sorted section over
+         * by one. This creates space in which to insert the value.
+         */
+        for (j=i-1; j > -1 && items[j] > value; j--) {
+            items[j+1] = items[j];
+        }
+
+        items[j+1] = value;
+    }
+
+    return items;
+}
 ```
 
-###Q:
-How can we pass optional or keyword parameters from one function to another in Python?
+#### Resources
 
-###A:
-Gather the arguments using the * and ** specifiers in the function's parameter list. This
-gives us positional arguments as a tuple and the keyword arguments as a dictionary. Then
-we can pass these arguments while calling another function by using * and **.
+- [Interactive Step Through of Insertion Sort](http://bit.ly/1Kdzmrr)
 
-Ex:
-```
-def fun1(a, *tup, **keywordArg):
-...
-keywordArg['width']='23.3c'
-...
-Fun2(a, *tup, **keywordArg)
-```
-
-###Q:
-Explain indexing and slicing operations in sequences.
-
-###A:
-- Different types of sequences in Python are strings, Unicode strings, lists, tuples, buffers,
-  and xrange objects.
-- **Slicing and Indexing Operations** are salient features of a sequence.
-- Indexing operations allows us to access a particular item in the sequence directly (similar
-  to the array/list indexing)
-- **Slicing** allows you to retrieve a part of the sequence
-- The slicing operation is used by specifying the name of the sequence followed by an optional
-  pair of numbers separated by a colon with square brackets.  Ex: `S[startno:stopno]`
-- The `startno` in the slicing operations indicates the position from where the slice starts
-  and the `stopno` indicates where the slice will stop at.
-- If the `startno` is ommited, Python will start at the beginning of the sequence.  If `stopno`
-  is ommitted, Python will stop at the end of the sequence.
-
-Ex:
-```
-❯ cosmeticList =[‘lipsstick’,’facepowder’,eyeliner’,’blusher’,kajal’]
-❯ print “Slicing operation :”,cosmeticList[2:]
-Slicing operation :[‘eyeliner’,’blusher’,kajal’]
-❯ print “Indexing operation :”,cosmeticList[0]
-“Indexing operation :lipsstick
-```
+- [Harvard YouTube Video](http://bit.ly/1Ds5F5k)
 
 
-###Q:
-What is Lambda form? Explain about assert statement.
 
-###A:
-####Lambda form:
-- Using lambda keyword tiny anonymous functions can be created.
-- It is a very powerful feature of Python which declares a one-line unknown small function on
-  the fly.  The Lambda is used to create new function objects and then return them at runtime.
-- The general format for Lambda is:
-  lambda parameters(s): expression using the parameter(s)
+Bubble Sort
+-----------
 
-Ex: (k is lambda function)
-```
-❯ k=lambda y:y+y
-❯ k(30)
-60
+- **Definition:** This algorithm sequentially goes through the array and compares two values at a
+time, swapping them if necessary. It then repeats the process until no swaps are
+required.
 
-❯ k(40)
-80
-```
+<!--
+| Time Complexity                  | Space Complexity    |
+|  Best  |   Average   |   Worst   |                     |
+| -------------------------------- | :-----------------: |
+| `O(n)` |  `O(n²)`   |  `O(n²)`   |       `O(1)`        |
+-->
+<table>
+<thead>
+<tr>
+  <tr>
+    <th colspan="3" scope="colgroup">Time Complexity</th>
+    <th colspan="1" scope="colgroup">Space Complexity</th>
+  </tr>
+<th>Best</th>
+<th>Average</th>
+<th>Worst</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>O(n)</code></td>
+<td><code>O(n²)</code></td>
+<td><code>O(n²)</code></td>
+<td><code>O(1)</code></td>
+</tr>
+</tbody>
+</table>
 
-####The assert statement:
-- The built-in assert statement of python introduced in v1.5 is used to assert that something is true.
-- Programmers often place assertions at the beginning of a function to check for valid input, and
-  after function to call to check for valid output. Assert statement can be removed after testing of
-  a program is over.
-- If assert evaluates to be false, an `AssertionError` exception is raised. `AssertionError` exceptions
-  can be handled with the try except statement.
-The general syntax for an assert statement is:
-```
-assert Exception[, Arguments]
+
+#### Implementation
+
+```javascript
+function bubbleSort(items){
+
+    for (var i = 0; i < items.length; i++){
+
+        for (var j = 0; j < items.length - i; j++){
+
+            if (items[j] > items[j+1]){
+
+              var temp = items[j];
+              items[j] = items[j+1];
+              items[j+1] = temp;
+            }
+        }
+    }
+
+    return items;
+}
 ```
 
-###Q:
-Explain the role of the repr function.
+#### Resources
 
-###A:
-- Python can convert any value to a string by making use of two functions `repr()` and `str()`
-- The `str()` function returs representatios of values which are human-readable, while `repr()`
-  generates representations which can be read by the interpreter.
-- `repr()` returns machine-readable representations of values, suitable for an exec command.
+- [Interactive Step Through of Bubble Sort](http://bit.ly/1KdAivY)
 
-Ex:
-```
-def fun():
-y=2333.3
-x=str(y)
-z=repr(y)
-print " y :",y
-print "str(y) :",x
-print "repr(y):",z
-fun()
--------------
-output
-y : 2333.3
-str(y) : 2333.3
-repr(y) : 2333.3000000000002
-```
-
-###Q:
-Explain pickling and unpickling.
-
-###A:
-Pickling is a standard module which serializes & de-serializes a python object structure.
-
-Pickle module accepts any python object, converts it into a string representation, and
-dumps it into a file (by using dump() function) which can be used later. This process
-is called `pickling`. Whereas `unpickling` is the process of retrieving the original python
-object from the stored string representation for use.
+- [Harvard YouTube Video](http://bit.ly/1HglMFv)
 
 
-###Q:
-What is LIST comprehensions features of Python used for?
 
-###A:
-- LIST comprehensions features were introduced in Python v2.0
-- It creates a new list based on an existing list.
-- It maps a list into another list by applying a function to each of the elements of the
-  existing list.
-- List comprehensions create lists without using `map()`, `filter()`, or `lambda form`
+Selection Sort
+--------------
 
+- **Definition:**
 
-###Q:
-How is memory managed in Python?
+    - Assume the first item is the smallest value.
 
-###A:
-- Memory management in python involves a private heap containing all python objects and
-  data structures. The interpreter takes care of the python heap and the programmer has
-  no access to it.
-- The allocation of heap space for python objects is done by the `python memory manager`.
-  The core API of python provides some tools for the programmer to code reliably and build
-  more robust programs.
-- Python also has a built-in garbage collector which recycles all the unused memory. When
-  an object is no longer referenced by the program, the heap space it occupies can be freed.
-  The garbage collector determines objects which are no longer referenced by the program
-  and frees the occupied memory and makes it available to the heap space.
+    - Compare this item to the second item.
 
-Ex: (the `gc` module defines functions to enable/disable the garbage collecor)
-`gc.enable()`  - Enables automatic garbage collection.
-`gc.disable()` - Disables automatic garbage collection.
+    - If the second item is smaller than the first, set the second item as the new minimum.
 
+    - Continue until the end of the data set is reached.
 
-###Q:
-How do you make a higher order function in python?
+    - If the minimum value is not the item you started with, swap them.
+<!--
+| Time Complexity                  | Space Complexity    |
+|  Best  |   Average   |   Worst   |                     |
+| -------------------------------- | :-----------------: |
+| `O(n)` |  `O(n²)`    |  `O(n²)`  |       `O(1)`        |
+-->
 
-###A:
-- A higher order function accepts one or more functions as input and returns a new function.
-  Sometimes it is required to use function as data.
-- To make a higher order function, we need to import `functools` module
-- The `functools.partial()` is used often for higher order functions.
+<table>
+<thead>
+<tr>
+  <tr>
+    <th colspan="3" scope="colgroup">Time Complexity</th>
+    <th colspan="1" scope="colgroup">Space Complexity</th>
+  </tr>
+<th>Best</th>
+<th>Average</th>
+<th>Worst</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>O(n)</code></td>
+<td><code>O(n²)</code></td>
+<td><code>O(n²)</code></td>
+<td><code>O(1)</code></td>
+</tr>
+</tbody>
+</table>
 
-###Q:
-Explain how to copy an object in python.
+#### Implementation
 
-###A:
-- There are two ways in which objects can be copied in python.
-  1. Shallow Copy
-  2. Deep Copy
-- Shallow copies duplicate minute as possible whereas Deep copies duplicate everything.
+```javascript
+function selectionSort(items){
 
-Ex: (if `a` is an object to be copied then)
-`copy.copy(a)`     - returns a shallow copy of a.
-`copy.deepcopy(a)` - returns a deep copy of a.
+    for (i=0; i < items.length; i++){
 
-###Q:
-How can I find the methods or attributes of an object in python?
+        // Set minimum to this position.
+        var min = i;
 
-###A:
-- Built-in `dir()` function of python, on an instance shows the instance variables as well as
-  the methods and class attributes defined by the instance's class and all it's base classes
-  alphabetically. So by any object as an argument to `dir()` we can find all the methods and
-  attributes of the object's class.
+        // Check the rest of the array to see if anything is smaller.
+        for (j=i+1; j < items.length; j++){
+            if (items[j] < items[min]){
+                min = j;
+            }
+        }
 
-Ex:
-```
-class Employee:
-def __init__(self,name,empCode,pay):
-  self.name=name
-  self.empCode=empCode
-  self.pay=pay
+        // If the minimum isn't in the position, swap it.
+        if (i != min){
 
-print("dir() listing all the Methods & attributes of class Employee")
-print dir(e)
------------------------------------------------------
-Output
-dir() listing all the Methods & attributes of class Employee
-[ '__init__', 'empCode', 'name', 'pay']
+            // Swapping the items.
+            var temp = items[i];
+            items[i] = items[min];
+            items[min] = temp;
+        }
+    }
+
+    return items;
+}
 ```
 
+#### Resources
 
-###Q:
-How to convert a string to a number?
+- [Computer Science In JavaScript Article](http://bit.ly/1Nllj6f)
 
-###A:
-- The `int()` function takes a string and converts it to a number.
-- The `float()` function converts strings into float numbers.
-
-Ex: `int()`
-```
-❯ s = "1234" # s is string
-❯ i = int(s) # string converted to int
-❯ print i+2
--------------------------
-1236
-```
-
-Ex: `float()`
-```
-❯ s = "1234.22" # s is string
-❯ i = float(s) # string converted to float
-❯ print i
--------------------------
-1234.22
-```
-
-###Q:
-What is a negative index in python?
-
-###A:
-- Python arrays & list items can be accessed with positive or negative numbers (also known as index).
-- A negative index accesses elements from the end of the list counting backwards.
-
-Ex:
-```
-❯ import array
-❯ a= [1, 2, 3]
-❯ print a[-3]
-1
-❯ print a[-2]
-2
-❯ print a[-1]
-3
-```
-
-###Q:
-How do you make an array in Python?
-
-###A:
-- The array module contains methods for creating arrays of fixed types with homogenous data types.
-  `Arrays` are slower than `lists`.
-- Arrays of characters, integers, floating point numbers can be created using the `array` module.
-
-Ex:
-```
-array(typecode[, intializer])
-```
-- This returns a new array whose items are constrained by typecode, and initialized from the optional
-  initialized value. Where the typecode can be for instance ‘c’ for character value, ‘d’ for double,
-  ‘f’ for float.
+- [Harvard YouTube Video](http://bit.ly/1DrZf66)
 
 
-###Q:
-Explain how to create a multidimensional list.
+
+Merge Sort
+-----------
+
+- **Definition:** It works kind of like this, "Assume you have two lists, list
+A and list B. You start from the front of each list and compare the two values.
+Whichever value is smaller is inserted into the results array. So suppose the
+smaller value is from list A; that value is placed into the results array. Next,
+the second value from list A is compared to the first value in list B. Once again,
+the smaller of the two values is placed into the results list. So if the smaller
+value is now from list B, then the next step is to compare the second item from
+list A to the second item in list B."
+
+<!--
+| Time Complexity                          | Space Complexity    |
+|  Best  |    Average     |      Worst     |                     |
+| ---------------------------------------- | :-----------------: |
+| `O(n)` | `O(n log(n))`  |  `O(n log(n))` |       `O(n)`        |
+-->
+<table>
+<thead>
+<tr>
+  <tr>
+    <th colspan="3" scope="colgroup">Time Complexity</th>
+    <th colspan="1" scope="colgroup">Space Complexity</th>
+  </tr>
+<th>Best</th>
+<th>Average</th>
+<th>Worst</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>O(n)</code></td>
+<td><code>O(n log(n))</code></td>
+<td><code>O(n log(n))</code></td>
+<td><code>O(n)</code></td>
+</tr>
+</tbody>
+</table>
 
 
-###A:
-- There are two ways to create multidimensional lists:
-1. By direct initializing the `list` as shown below to create `multidimlist` below.
-2. Create a list of the desired length first, then fill in each element with the newly created lists.
-   (see below)
 
-Ex: 1
-```
-❯ multidimlist = [
-                  [227, 122, 223],
-                  [222, 321, 192],
-                  [21, 122, 444]
-]
-❯ print multidimlist[0]
-❯ print multidimlist[1][2]
-__________________________
-Output
-[227, 122, 223]
-192
-```
+#### Implementation
 
-Ex: 2
-```
-❯ list=[0]*3
-❯ for i in range(3):
-❯   list[i]=[0]*2
-❯ for i in range (3):
-❯   for j in range(2):
-❯   list[i][j] = i+j
-❯ print list
-__________________________
-Output
-[[0, 1], [1, 2], [2, 3]]
-```
+```javascript
+function mergeSort(items){
 
-###Q:
-Explain how to overload constructors (or methods) in python.
+    // Terminal condition - don't need to do anything for arrays with 0 or 1 items
+    if (items.length < 2) {
+        return items;
+    }
 
-###A:
-- `__init__()` is the first method defined in a class. When an instance of a class is created,
-  python calls `__init__()` to initialize the attribute of the object.
+    var work = [],
+        i,
+        len;
 
-Ex:
-```
-class Employee:
+    for (i=0, len=items.length; i < len; i++){
+        work.push([items[i]]);
+    }
+    work.push([]);  // In case of odd number of items.
 
-  def __init__(self, name, empCode, pay):
-    self.name = name
-    self.empCode = empCode
-    self.pay = pay
+    for (var lim=len; lim > 1; lim = Math.floor((lim+1)/2)){
+        for (var j=0,k=0; k < lim; j++, k+=2){
+            work[j] = merge(work[k], work[k+1]);
+        }
+        work[j] = [];  //in case of odd number of items
+    }
 
-e1 = Employee("Sarah", 99, 30000.00)
+    return work[0];
+}
 
-e2 = Employee("Asrar", 100, 60000.00)
-print("Employee Details:")
 
-print(" Name:",e1.name,"Code:", e1.empCode,"Pay:", e1.pay)
-print(" Name:",e2.name,"Code:", e2.empCode,"Pay:", e2.pay)
----------------------------------------------------------------
-Output
 
-Employee Details:
-(' Name:', 'Sarah', 'Code:', 99, 'Pay:', 30000.0)
-(' Name:', 'Asrar', 'Code:', 100, 'Pay:', 60000.0)
+/**
+ * Merges to arrays in order based on their natural
+ * relationship. Helper function.
+ * @param  {Array} left  The first array to merge.
+ * @param  {Array} right The second array to merge.
+ * @return {Array}       The merged array.
+ */
+function merge(left, right){
+    var result = [];
+
+    while (left.length > 0 && right.length > 0){
+        if (left[0] < right[0]){
+            result.push(left.shift());
+        } else {
+            result.push(right.shift());
+        }
+    }
+
+    result = result.concat(left).concat(right);
+
+    // Make sure remaining arrays are empty.
+    left.splice(0, left.length);
+    right.splice(0, right.length);
+
+    return result;
+}
 ```
 
+#### Resources
 
-###Q:
-Describe how to send mail from a python script.
+- [Computer Science in JavaScript Article](http://bit.ly/1NllGOh)
 
-###A:
-- The `smtplib` module defines an SMTP client session object that can be used to send mail to
-  any Internet machine.
--
-
-Ex:
-```
-import smtplib
-
-SERVER = smtplib.SMTP(‘smtp.server.domain’)
-FROM = sender@mail.com
-TO = ["user@mail.com"] # must be a list
-SUBJECT = "Hello!"
-TEXT = "This message was sent with Python's smtplib."
-
-# Main message
-message = """
-From: Alex Cory < sender@mail.com >
-To: HackingEDU user@mail.com
-Subject: SMTP email msg
-This is a test email. Acknowledge the email by responding.
-""" % (FROM, ", ".join(TO), SUBJECT, TEXT)
-server = smtplib.SMTP(SERVER)
-server.sendmail(FROM, TO, message)
-server.quit()
-```
+- [Harvard YouTube Video](http://bit.ly/1gXpCut)
 
 
-###Q:
-Describe how to generate random numbers in python.
-
-###A:
-- The standard module `random` implements a random number generator.
-- There are also many other in this module, such as:
-  - `uniform(a, b)` - returns a floating point number in the range [a, b].
-  - `randint(a, b)` - returns a random integer number in the range [a, b].
-  - `random()`      - returns a floating point number in the range [0, 1].
-
-Ex:
-```
-import random
-
-i = random.randint(1,99) # i randomly initialized by integer between range 1 & 99
-j= random.uniform(1,999) # j randomly initialized by float between range 1 & 999
-k= random.random()# k randomly initialized by float between range 0 & 1
-print("i :" ,i)
-print("j :" ,j)
-print("k :" ,k)
-__________
-Output -
-('i :', 64)
-('j :', 701.85008797642115)
-('k :', 0.18173593240301023)
-
-Output-
-('i :', 83)
-('j :', 56.817584548210945)
-('k :', 0.9946957743038618)
-```
 
 
-###Q:
-How do we make python scripts executable?
+Quick Sort
+-----------
 
-###A:
-- In terminal or in an IDE
-- IDE: open file and click the run button
-- Terminal: example below
+- **Definition:**
 
-Ex:
-```
-❯ python pythonFile.py
-```
+    - Find a “pivot” item in the array. This item is the basis for comparison
+      for a single round.
 
+    - Start a pointer (the left pointer) at the first item in the array.
 
-###Q:
-Explain how to make forms in python.
+    - Start a pointer (the right pointer) at the last item in the array.
 
-###A:
-- We need to import `cgi` module to access form fields using the `FieldStorage` class.
-- Every instance of class FieldStorage (for 'form') has the following attributes:
-  - **form.name:**                The name of the field, if specified.
-  - **form.filename:**            If an FTP transaction, the client-side filename.
-  - **form.value:**               The value of the field as a string.
-  - **form.file:**                file object from which data can be read.
-  - **form.type:**                The content type, if applicable.
-  - **form.type_options:**        The options of the 'content-type' line of the HTTP request, returned as a dictionary.
-  - **form.disposition:**         The field 'content-disposition'; None if unspecified.
-  - **form.disposition_options:** The options for 'content-disposition'.
-  - **form.headers:**             All of the HTTP headers returned as a dictionary.
+    - While the value at the left pointer in the array is less than the pivot
+      value, move the left pointer to the right (add 1). Continue until the value
+      at the left pointer is greater than or equal to the pivot value.
 
-Ex:
-```
-import cgi
+    - While the value at the right pointer in the array is greater than the pivot
+      value, move the right pointer to the left (subtract 1). Continue until the
+      value at the right pointer is less than or equal to the pivot value.
 
-form = cgi.FieldStorage()
-if not (form.has_key("name") and form.has_key("age")):
-print "<H1>Name & Age not Entered</H1>"
-print "Fill the Name & Age accurately."
-return
-print "<p>name:", form["name"].value
-print "<p>Age:", form["age"].value
-```
+    - If the left pointer is less than or equal to the right pointer, then swap
+      the values at these locations in the array.
 
+    - Move the left pointer to the right by one and the right pointer to the left
+      by one.
 
-###Q:
-Describe how to implement Cookies for Web python.
+    - If the left pointer and right pointer don’t meet, go to step 1.
 
-###A:
-- A cookie is an arbitray string of characters that uniquely identifies a session.
-- Each cookie is specific to one website and one user.
-- The `Cookie` module defines classes for abstracting the concepts of cookies. It contains the following methods to
-  create cookies:
-  - `Cookie.SimpleCookie([input])`
-  - `Cookie.SerialCookie([input])`
-  - `Cookie.SmartCookie([input])`
+<!--
+| Time Complexity                         | Space Complexity    |
+|  Best         |    Average    | Worst   |                     |
+| --------------------------------------- | :-----------------: |
+| `O(n log(n))` | `O(n log(n))` | `O(n²)` |     `O(log(n))`     |
+-->
 
-Ex: (this creates a cookie)
-```
-import Cookie
-
-ck = Cookie.SimpleCookie(x)
-```
+<table>
+<thead>
+<tr>
+  <tr>
+    <th colspan="3" scope="colgroup">Time Complexity</th>
+    <th colspan="1" scope="colgroup">Space Complexity</th>
+  </tr>
+<th>Best</th>
+<th>Average</th>
+<th>Worst</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>O(n log(n))</code></td>
+<td><code>O(n log(n))</code></td>
+<td><code>O(n²)</code></td>
+<td><code>O(log(n))</code></td>
+</tr>
+</tbody>
+</table>
 
 
-###Q:
 
+#### Implementation
+```javascript
+function quickSort(items, left, right) {
 
-###A:
--
--
+  // Performance - don't sort an array with zero or one items.
+  if (items.length > 1) {
 
-Ex:
+    // Fix left and right values - might not be provided.
+    var left    = typeof left != "number" ? 0 : left,
+        right   = typeof right != "number" ? items.length - 1 : right,
+        // Pivot value is middle item.
+        pivot   = items[Math.floor((right + left) / 2)],
+        // Starts from left and goes right to pivot index.
+        i       = left,
+        // Starts from right and goes left to pivot index.
+        j       = right;
+
+    // While the two indices don't match.
+    while (i <= j) {
+
+      // If the item on the left is less than the pivot, continue right.
+      while (items[i] < pivot) {
+        i++;
+      }
+
+      // If the item on the right is greater than the pivot, continue left.
+      while (items[j] > pivot) {
+        j--;
+      }
+
+      // If the two indices still don't match, swap the values.
+      if (i <= j) {
+
+        var temp = items[i];
+        items[i] = items[j];
+        items[j] = temp;
+
+        // Change indices to continue loop.
+        i++;
+        j--;
+      }
+    }
+
+    // Split up the entire array.
+    var index = i;
+
+    // If the returned index.
+    if (left < index - 1) {
+      quickSort(items, left, index - 1);
+    }
+
+    if (index < right) {
+      quickSort(items, index, right);
+    }
+
+  }
+
+  return items;
+}
 ```
 
+#### Resources
+
+- [Computer Science In JavaScript Article](http://bit.ly/1NlmT86)
+
+- [Harvard YouTube Video](http://bit.ly/1Nln03A)
+
+
+
+Shell Sort
+-----------
+
+- **Definition:** Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+<!--
+| Time Complexity                              | Space Complexity    |
+|  Best         |    Average    | Worst        |                     |
+| -------------------------------------------- | :-----------------: |
+| `O(n)`        |`O((nlog(n)²)` |`O((nlog(n)²)`|       `O(1)`        |
+-->
+
+<table>
+<thead>
+<tr>
+  <tr>
+    <th colspan="3" scope="colgroup">Time Complexity</th>
+    <th colspan="1" scope="colgroup">Space Complexity</th>
+  </tr>
+<th>Best</th>
+<th>Average</th>
+<th>Worst</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>O(n)</code></td>
+<td><code>O((nlog(n)²)</code></td>
+<td><code>O((nlog(n)²)</code></td>
+<td><code>O(1)</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+#### Implementation
+```javascript
+function shellSort (items) {
+
+  for (var h = items.length; h = parseInt(h / 2);) {
+
+    for (var i = h; i < items.length; i++) {
+
+      var k = items[i];
+
+      for (var j = i; j >= h && k < items[j - h]; j -= h) {
+
+        items[j] = items[j - h];
+        items[j] = k;
+      }
+    }
+  }
+  return items;
+}
 ```
 
+#### Resources
 
-###Q:
+- [Computer Algorithms: Shell Sort Article](http://bit.ly/1MYxcBY)
+- [YouTube Video](http://bit.ly/1MYxFE9)
 
+ 
+Overall Resources
+-----------------
 
-###A:
--
--
+- [Data Structure Visualizations](http://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
 
-Ex:
+<!--
+
+**ALOGRITHM
+-----------
+
+- **Definition:** Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+- **Time Complexity:** `O(n²) CHANGE`
+
+- **Space Complexity:**
+
+#### Implementation
+```javascript
+
 ```
 
-```
+#### Resources
+
+- [EXAMPLE INTERACTIVE OR ARTICLE](http:EXAMPLE.COM)
+
+- [Harvard YouTube Video](http:EXAMPLE.COM)
+-->
