@@ -1,8 +1,23 @@
 Data Structures
 ===============
 
+Linked Lists
+------------
+
+Doubly Linked Lists
+-------------------
+
+Binary Trees
+------------
+
+Binary Search Trees
+-------------------
+
 Heaps
 -----
+
+- [Youtube Video](https://www.youtube.com/watch?v=q7R_upR81FU)
+
 
 #### Binary Heaps
 
