@@ -53,6 +53,7 @@ export default class DoublyLinkedList {
 	  return oldHead
 	}
 
+
 	/* DONE */
 	/**
 	 * Add data to the beginning of linked list.
@@ -78,6 +79,7 @@ export default class DoublyLinkedList {
 	  this.length++
 	}
 
+
 	remove(node) {
 		if (isUndefined(node)) throw new Error(green('No such node in the list! Whoopsies!'))
 		let current = this.head
@@ -88,6 +90,7 @@ export default class DoublyLinkedList {
 			current = current.next
 		}
 	}
+
 
 	/* DONE */
 	removeByPosition(position) {
@@ -138,6 +141,7 @@ export default class DoublyLinkedList {
 		throw new Error(green('Failure: non-existent node in this list. [from: removeByPosition()]'))
 	}
 
+
 	/* DONE */
 	/**
 	 * Remove a node from the linked list using the data to find it
@@ -182,6 +186,7 @@ export default class DoublyLinkedList {
 	  return false
 	}
 
+
 	/* DONE */
 	searchByData(data) {
     let current = this.head
@@ -194,6 +199,7 @@ export default class DoublyLinkedList {
     }
 		throw new Error(green('Failure: non-existent node in this list. [from: searchByData()]'))
 	}
+
 
 	/* DONE */
 	searchByPosition(position) {
@@ -210,6 +216,7 @@ export default class DoublyLinkedList {
 		throw new Error(green('Failure: non-existent node in this list. [from: searchByPosition()]'))
 	}
 
+
 	/* DONE, make more readable */
 	add(data) {
 		if (isUndefined(data)) throw new Error(green('No data provided when adding a new node! [from: add()]'))
@@ -220,6 +227,7 @@ export default class DoublyLinkedList {
 		}
 	}
 
+
 	/* DONE, make more readable */
 	addAll(items) {
 		if (items.length == 0) throw new Error(green('No data provided when adding a new node! [from: addAll()]'))
@@ -228,6 +236,7 @@ export default class DoublyLinkedList {
 			this.addNode(items[i])
 		}
 	}
+
 
 	/* DONE, make more readable */
 	addNode(item) {
@@ -255,6 +264,7 @@ export default class DoublyLinkedList {
 	  return node;
 	}
 
+
 	/* works for some cases - see below examples */
 	addRecursive(data, current = this.head) {
 		if (isUndefined(data)) return null
@@ -280,12 +290,14 @@ export default class DoublyLinkedList {
     this.addRecursive(data, current);
 	}
 
+
 	/* Returns whether data is in the list starting at the current. */
 	containsRecursive(data, current = this.head) {
 		return current == null ? false
 				 : data == current.data ? true
 				 : this.containsRecursive(data, current.next);
 	}
+
 
 	get head() { return this._head }
 	set head(data) { this._head = data }
