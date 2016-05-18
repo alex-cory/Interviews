@@ -17,6 +17,7 @@ Heaps
 -----
  - [Wiki](https://www.wikiwand.com/en/Heap_(data_structure))
  - [Youtube Video](https://www.youtube.com/watch?v=q7R_upR81FU)
+ - [heapq.py (python's implementation of a heap)](https://docs.python.org/2/library/heapq.html#heapq.heappush)
 
 
 #### [Binary Heaps](https://www.wikiwand.com/en/Binary_heap)
