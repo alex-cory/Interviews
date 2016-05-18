@@ -15,15 +15,23 @@ Binary Search Trees
 
 Heaps
 -----
+ - [Wiki](https://www.wikiwand.com/en/Heap_(data_structure))
+ - [Youtube Video](https://www.youtube.com/watch?v=q7R_upR81FU)
 
-- [Youtube Video](https://www.youtube.com/watch?v=q7R_upR81FU)
 
+#### [Binary Heaps](https://www.wikiwand.com/en/Binary_heap)
+ - [Example 1](https://github.com/Tyriar/js-binary-heap/blob/master/index.js)
+ - [Example 2](https://codetype.wordpress.com/2012/08/29/cracking-the-coding-interview-javascript-minmax-binary-heap/)
+ - [Example 3](http://eloquentjavascript.net/1st_edition/appendix2.html)
+ - [CoffeScript Implementation](https://github.com/qiao/heap.js)
 
-#### Binary Heaps
+#### [Binomial Heaps](https://www.wikiwand.com/en/Binomial_heap)
+ - [Example 1](https://github.com/Tyriar/js-binomial-heap/blob/master/index.js)
+ - 
 
-#### Binomial Heaps
-
-#### Fibonacci Heaps
+#### [Fibonacci Heaps](https://www.wikiwand.com/en/Fibonacci_heap)
+ - [Example 1](https://github.com/Tyriar/js-fibonacci-heap/blob/master/index.js)
+ - 
 
 |                          | Binary Heap <br> **(worst case)**  | Binomial Heap <br> **(worst case)** | Fibonacci Heap <br> **(amortized)** |
 | ------------------------ | ------------------- | ------------------------ | ------------------- |
