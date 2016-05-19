@@ -9,6 +9,7 @@ Doubly Linked Lists
 
 Binary Trees
 ------------
+ - [How to Pretty Print a Binary Tree](http://articles.leetcode.com/how-to-pretty-print-binary-tree/)
 
 Binary Search Trees
 -------------------
