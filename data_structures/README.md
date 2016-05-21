@@ -9,10 +9,16 @@ Doubly Linked Lists
 
 Binary Trees
 ------------
+ - [Wiki](https://www.wikiwand.com/en/Binary_tree)
  - [How to Pretty Print a Binary Tree](http://articles.leetcode.com/how-to-pretty-print-binary-tree/)
 
 Binary Search Trees
 -------------------
+ - [Wiki](https://www.wikiwand.com/en/Binary_search_tree)
+ - [A simple binary search tree in JavaScript](https://gist.github.com/trevmex/821973)
+ - [Gist Example](https://gist.github.com/TheIronDeveloper/6604713)
+ - [Computer science in JavaScript: Binary search tree, Part 1](https://www.nczonline.net/blog/2009/06/09/computer-science-in-javascript-binary-search-tree-part-1/)
+
 
 Heaps
 -----
