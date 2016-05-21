@@ -9,11 +9,10 @@ import { green, blue } from 'chalk'
   */
 export default class MinBinaryHeap {
   constructor(data) {
-      this._heap = []
-      this._size = 0
+    this._heap = []
+    this._size = 0
 
-      if (data) {console.log('USING CONSTRUCTOR');}
-      // if (data) this.add(data)
+    if (data) this.add(data)
   }
 
   isHeap() {}
@@ -42,22 +41,22 @@ export default class MinBinaryHeap {
 
 
   add(data, position = this.size) {
-  	if (isUndefined(data)) throw new Error(green('No data provided when adding a new node! [from: add()]'))
+    if (isUndefined(data)) throw new Error(green('No data provided when adding a new node! [from: add()]'))
 
-  	if (isArray(data)) {
-  		this.addAll(data)
-  	} else {
-  		this.addNode(data, position)
-  	}
+    if (isArray(data)) {
+      this.addAll(data)
+    } else {
+      this.addNode(data, position)
+    }
   }
 
 
   addAll(items) {
-  	if (items.length == 0) throw new Error(green('No data provided when adding a new node! [from: addAll()]'))
+    if (items.length == 0) throw new Error(green('No data provided when adding a new node! [from: addAll()]'))
 
-  	for (let i = 0; i < items.length; i++) {
-  		this.addNode(items[i])
-  	}
+    for (let i = 0; i < items.length; i++) {
+      this.addNode(items[i])
+    }
   }
 
 
@@ -157,23 +156,23 @@ export default class MinBinaryHeap {
    * Displays the heap in the console in a visually appealing way.
    */
   display() {
-  	let lines = []
-  	let level = []
-  	let next = []
-  	let output = ''
+    let lines = []
+    let level = []
+    let next = []
+    let output = ''
 
-  	level.push(this.heap[0])
-  	// number of children
-  	let degree = 1
+    level.push(this.heap[0])
+    // number of children
+    let degree = 1
 
-  	let widest = 0
+    let widest = 0
 
-  	while (degree != 0) {
-	    var line = []
+    while (degree != 0) {
+      var line = []
 
-	    degree = 0
+      degree = 0
 
-	    for (let node of level) {
+      for (let node of level) {
         if (node == null) {
           line.push(null)
 
@@ -190,23 +189,23 @@ export default class MinBinaryHeap {
           if (node.left !== null) degree++
           if (node.right !== null) degree++
         }
-	    }
+      }
 
-	    if (widest % 2 == 1) widest++
+      if (widest % 2 == 1) widest++
 
-	    lines.push(line)
+      lines.push(line)
 
-	    level = next
-	    next = []
-  	}
+      level = next
+      next = []
+    }
 
-  	let perpiece = lines[lines.length - 1].length * (widest + 4)
-  	for (var i = 0; i < lines.length; i++) {
-  	    var line = lines[i]
-  	    var hpw = Math.floor(perpiece / 2) - 1
+    let perpiece = lines[lines.length - 1].length * (widest + 4)
+    for (var i = 0; i < lines.length; i++) {
+        var line = lines[i]
+        var hpw = Math.floor(perpiece / 2) - 1
 
-  	    if (i > 0) {
-	        for (var j = 0; j < line.length; j++) {
+        if (i > 0) {
+          for (var j = 0; j < line.length; j++) {
 
             // split node
             var c = ' '
@@ -222,13 +221,13 @@ export default class MinBinaryHeap {
             // lines and spaces
             if (line[j] == null) {
               for (var k = 0; k < perpiece - 1; k++) {
-              	output += ' '
+                output += ' '
               }
             } else {
 
-            	// right horizontal lines
+              // right horizontal lines
               for (let k = 0; k < hpw; k++) {
-              	output += j % 2 == 0 ? " " : blue("─")
+                output += j % 2 == 0 ? " " : blue("─")
               }
 
               // left + right corners
@@ -236,42 +235,42 @@ export default class MinBinaryHeap {
 
               // left horizontal lines
               for (let k = 0; k < hpw; k++) {
-              	output += j % 2 == 0 ? blue('─') : " "
+                output += j % 2 == 0 ? blue('─') : " "
               }
             }
-	        }
-	        output += '\n'
-  	    }
+          }
+          output += '\n'
+        }
 
-  	    // print line of numbers
-  	    for (let j = 0; j < line.length; j++) {
+        // print line of numbers
+        for (let j = 0; j < line.length; j++) {
 
-	        let num = (line[j] == null) ? '' : line[j]
-	        let numDigits = num.toString().length
-	        let leftGap = Math.ceil(perpiece / 2 - numDigits / 2)
-	        let rightGap = Math.floor(perpiece / 2 - numDigits / 2)
+          let num = (line[j] == null) ? '' : line[j]
+          let numDigits = num.toString().length
+          let leftGap = Math.ceil(perpiece / 2 - numDigits / 2)
+          let rightGap = Math.floor(perpiece / 2 - numDigits / 2)
 
-	        // a number
-	        for (let k = 0; k < leftGap; k++) {
-	        	output += ' '
-	        }
-	        output += green(num)
+          // a number
+          for (let k = 0; k < leftGap; k++) {
+            output += ' '
+          }
+          output += green(num)
 
-	        for (let k = 0; k < rightGap; k++) {
-	        	output += ' '
-	        }
-  	    }
-  	    // go to the next line
-  	    output += '\n'
+          for (let k = 0; k < rightGap; k++) {
+            output += ' '
+          }
+        }
+        // go to the next line
+        output += '\n'
 
-  	    perpiece /= 2
-  	}
-  	console.log(output)
+        perpiece /= 2
+    }
+    console.log(output)
   }
 
   /** return element S with the smallest key */
   min() {
-  	return this.heap[0]
+    return this.heap[0]
   }
   clear() {
     this.heap = []
