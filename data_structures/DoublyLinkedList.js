@@ -60,6 +60,8 @@ export default class DoublyLinkedList {
 	 * @param {Object} data Data which should be added.
 	 */
 	addFirst(data) {
+		if (isUndefined(data)) throw new Error(green('No data provided when adding a new node! [from: addFirst()]'))
+
 		// create a new node
 	  let node = new Node(data)
 
@@ -82,6 +84,7 @@ export default class DoublyLinkedList {
 
 	remove(node) {
 		if (isUndefined(node)) throw new Error(green('No such node in the list! Whoopsies!'))
+
 		let current = this.head
 		for (var i = 0; i < this.length; i++) {
 			if (current.data === node.data) {
@@ -94,6 +97,8 @@ export default class DoublyLinkedList {
 
 	/* DONE */
 	removeByPosition(position) {
+		if (isUndefined(position)) throw new Error(green('No position was provided when trying to remove a node! [from: removeByPosition()]'))
+
 		//check for out-of-bounds values
 		if (position > -1 && position < this.length){
 
@@ -189,6 +194,8 @@ export default class DoublyLinkedList {
 
 	/* DONE */
 	searchByData(data) {
+		if (isUndefined(data)) throw new Error(green('No data provided when searching for a node! [from: searchByData()]'))
+
     let current = this.head
 
     for (var i = 0; i < this.length; i++) {
@@ -203,6 +210,8 @@ export default class DoublyLinkedList {
 
 	/* DONE */
 	searchByPosition(position) {
+		if (isUndefined(position)) throw new Error(green('No position was provided when searching for a node! [from: searchByPosition()]'))
+
 		//check for out-of-bounds values
 		if (position > -1 && position < this.length){
 	    let current = this.head
@@ -220,6 +229,7 @@ export default class DoublyLinkedList {
 	/* DONE, make more readable */
 	add(data) {
 		if (isUndefined(data)) throw new Error(green('No data provided when adding a new node! [from: add()]'))
+
 		if (isArray(data)) {
 			this.addAll(data)
 		} else {
@@ -241,6 +251,7 @@ export default class DoublyLinkedList {
 	/* DONE, make more readable */
 	addNode(item) {
 		if (isUndefined(item)) throw new Error(green('No data provided when adding a new node! [from: addNode())]'))
+
 		let data = isPlainObject(item) ? item.data : item
 
 	  //create a new item object, place data in

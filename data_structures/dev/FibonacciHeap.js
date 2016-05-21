@@ -34,9 +34,7 @@ class FibonacciHeap {
 		this.min = null
 		this.size = 0
 	}
-	isEmpty() {
-		return this.min == null
-	}
+	isEmpty() { return this.min == null }
 
 	/** NOT WORKING */
 	/** Produces a max heap from an unordered array. */

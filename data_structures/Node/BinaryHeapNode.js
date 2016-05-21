@@ -1,11 +1,11 @@
 /**
- * Fibonacci Heap node.
+ * Binary Heap node.
  *
  * @private
  * @param {Object} key   Key of the node.
  * @param {Object} value Value of the node.
  */
-export default class FibonacciHeapNode {
+export default class BinaryHeapNode {
 	constructor(data = null, position = null) {
 		this._data = data
 		this._position = position
@@ -15,7 +15,6 @@ export default class FibonacciHeapNode {
 		this._degree = 0
 
 		this._parent = null
-		this._child = null
 		// is true if the node has lost a child since the node became a child of another node
 		this._isMarked = false
 	}
@@ -29,24 +28,34 @@ export default class FibonacciHeapNode {
 	get left() { return this._left }
 	set left(node) {
 		this._left = node
-		if (this._left) {
-			this.degree++
-		} else if (!this._left) {
-			this.degree--
-		}
+		// if (node) {
+		// 	this.degree++
+		// } else if (!node && !this._right) {
+		// 	this.degree = 0
+		// } else {
+		// 	this.degree--
+		// }
 	}
 
 	get right() { return this._right }
-	set right(node) { this._right = node }
+	set right(node) {
+		this._right = node
+		// if (node) {
+		// 	this.degree++
+		// } else if (!node && this._left) {
+		// 	this.degree--
+		// }
+	}
+
+	get numDigits() {
+		return this._data.toString().length
+	}
 
 	get degree() { return this._degree }
 	set degree(data) { this._degree = data }
 
 	get parent() { return this._parent }
 	set parent(data) { this._parent = data }
-
-	get child() { return this._child }
-	set child(data) { this._child = data }
 
 	get isMarked() { return this._isMarked }
 	set isMarked(data) { this._isMarked = data }
