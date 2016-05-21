@@ -201,69 +201,69 @@ export default class MinBinaryHeap {
 
     let perpiece = lines[lines.length - 1].length * (widest + 4)
     for (var i = 0; i < lines.length; i++) {
-        var line = lines[i]
-        var hpw = Math.floor(perpiece / 2) - 1
+      var line = lines[i]
+      var hpw = Math.floor(perpiece / 2) - 1
 
-        if (i > 0) {
-          for (var j = 0; j < line.length; j++) {
+      if (i > 0) {
+        for (var j = 0; j < line.length; j++) {
 
-            // split node
-            var c = ' '
-            if (j % 2 == 1) {
-              if (line[j - 1] != null) {
-                c = (line[j] != null) ? blue('┴') : blue('┘')
-              } else {
-                if (j < line.length && line[j] != null) c = blue('└')
-              }
-            }
-            output += c
-
-            // lines and spaces
-            if (line[j] == null) {
-              for (var k = 0; k < perpiece - 1; k++) {
-                output += ' '
-              }
+          // split node
+          var c = ' '
+          if (j % 2 == 1) {
+            if (line[j - 1] != null) {
+              c = (line[j] != null) ? blue('┴') : blue('┘')
             } else {
-
-              // right horizontal lines
-              for (let k = 0; k < hpw; k++) {
-                output += j % 2 == 0 ? " " : blue("─")
-              }
-
-              // left + right corners
-              output += j % 2 == 0 ? blue('┌') : blue('┐')
-
-              // left horizontal lines
-              for (let k = 0; k < hpw; k++) {
-                output += j % 2 == 0 ? blue('─') : " "
-              }
+              if (j < line.length && line[j] != null) c = blue('└')
             }
           }
-          output += '\n'
-        }
+          output += c
 
-        // print line of numbers
-        for (let j = 0; j < line.length; j++) {
+          // lines and spaces
+          if (line[j] == null) {
+            for (var k = 0; k < perpiece - 1; k++) {
+              output += ' '
+            }
+          } else {
 
-          let num = (line[j] == null) ? '' : line[j]
-          let numDigits = num.toString().length
-          let leftGap = Math.ceil(perpiece / 2 - numDigits / 2)
-          let rightGap = Math.floor(perpiece / 2 - numDigits / 2)
+            // right horizontal lines
+            for (let k = 0; k < hpw; k++) {
+              output += j % 2 == 0 ? " " : blue("─")
+            }
 
-          // a number
-          for (let k = 0; k < leftGap; k++) {
-            output += ' '
+            // left + right corners
+            output += j % 2 == 0 ? blue('┌') : blue('┐')
+
+            // left horizontal lines
+            for (let k = 0; k < hpw; k++) {
+              output += j % 2 == 0 ? blue('─') : " "
+            }
           }
-          output += green(num)
-
-          for (let k = 0; k < rightGap; k++) {
-            output += ' '
-          }
         }
-        // go to the next line
         output += '\n'
+      }
 
-        perpiece /= 2
+      // print line of numbers
+      for (let j = 0; j < line.length; j++) {
+
+        let num = (line[j] == null) ? '' : line[j]
+        let numDigits = num.toString().length
+        let leftGap = Math.ceil(perpiece / 2 - numDigits / 2)
+        let rightGap = Math.floor(perpiece / 2 - numDigits / 2)
+
+        // a number
+        for (let k = 0; k < leftGap; k++) {
+          output += ' '
+        }
+        output += green(num)
+
+        for (let k = 0; k < rightGap; k++) {
+          output += ' '
+        }
+      }
+      // go to the next line
+      output += '\n'
+
+      perpiece /= 2
     }
     console.log(output)
   }
