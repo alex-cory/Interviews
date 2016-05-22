@@ -1,6 +1,8 @@
 Algorithms in Bash
 ==================
 
+ - [Why not use Bash for Algorithmic Interviews?](http://giocc.com/why-not-use-bash-for-algorithmic-interviews.html)
+ 
 
 Quick Sort
 ----------
@@ -45,5 +47,24 @@ quicksort_recursive() {
 
   quicksort_recursive $start $(($q - 1))
   quicksort_recursive $(($q + 1)) $end
+}
+```
+
+Fibonacci
+---------
+```sh
+fib() {
+  local n=$1
+  case $n in
+    1) return 1 ;;
+    2) return 1 ;;
+  esac
+
+  fib $(($n - 1))
+  local fib1=$?
+  fib $(($n - 2))
+  local fib2=$?
+
+  return $(($fib1 + $fib2))
 }
 ```
