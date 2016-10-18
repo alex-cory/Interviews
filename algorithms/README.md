@@ -547,6 +547,7 @@ Overall Resources
 -----------------
 
 - [Data Structure Visualizations](http://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+- [Algorithm Visualizer JS](http://jasonpark.me/AlgorithmVisualizer/) ([github](https://github.com/parkjs814/AlgorithmVisualizer))
 
 <!--
 
