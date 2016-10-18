@@ -1,6 +1,6 @@
 import MinBinaryHeap from '../MinBinaryHeap'
 let mnbh = new MinBinaryHeap()
-mnbh.add([59, 21, 12, 41, 1, 0, 17, 99, 101, 13, 18, 66, 77, 69, 81, 43])
+mnbh.add([59, 21, 12, 41, 1, 0, 17, 99, 101, 13, 18, 66, 77, 69, 81, 43, 78, 90])
 // mnbh.add(1)
 // mnbh.add(5)
 // mnbh.add(10)

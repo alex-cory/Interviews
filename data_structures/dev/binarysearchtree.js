@@ -1,5 +1,4 @@
-import Node from './node';
-import * as data from './_data';
+import Node from '../Node/BinaryTreeNode';
 
 /**
  * Implementations:
@@ -18,13 +17,33 @@ import * as data from './_data';
  */
 export class BinarySearchTree {
   constructor(tree) {
-    this._root = this.isBinarySearchTree(tree) ? new Node(tree) : null;
+    this._root = null
+    this._size = 0
+    // this._root = this.isBinarySearchTree(tree) ? new Node(tree) : null;
     // this._currentNode = tree[0];
+
+    if (data) console.log('USING CONSTRUCTOR');
+    // if (data) this.add(data)
   }
 
-
+  // Conversion methods to change this Binary Search Tree to a different data structure
+  toArray() {}
+  toQueue() {}
+  toStack() {}
+  toGraph() {}
+  toLinkedList() {}
+  toDoublyLinkedList() {}
+  // recursive
+  searchRecursive(term) {}
+  // other
+  remove(data) {}
+  removeAll(items) {}
+  removeNode(item) {}
+  contains(data) {}
+  containsAll(items) {}
+  containsNode(item) {}
+  /** NO WORKING */
   isBinarySearchTree(tree) {
-    tree = tree || this.node;
 
     // when at root
     if (tree === null) return true;
@@ -45,15 +64,14 @@ export class BinarySearchTree {
   }
 
 
-  insert(data, current) {
+  insert(data, current = this.root) {
     if (this.root === null) {
-      this.root = new Node(data, null, null, null);
+      this.root = new Node(data);
       return;
     }
     var insertKey;
-    current = current || this.root;
     if (current.data > data) {
-      insertKey = '_left';
+      current.left = new Node(data)
     } else {
       insertKey = '_right';
     }
@@ -64,51 +82,13 @@ export class BinarySearchTree {
     }
   }
 
-  get root() {
-    return this._root;
-  }
 
-  set root(node) {
-    this._root = node;
-  }
 
-  contains(node) {
-  }
 
-  remove(node) {
-  }
-
-  min() {
-  }
-
-  max() {
-  }
-
-  previous() {
-  }
-
-  next() {
-  }
-
-  traverse() {
-  }
-
-  get node() {
-    // console.log(this._tree);
-    return this._tree;
-  }
-
-  isEmpty() {
-  }
-
-  size() {
-  }
-
-  toArray() {
-  }
-
-  toString() {
-  }
+  get root() { return this._root }
+  set root(node) { this._root = node }
+  get size() { return this._size }
+  set size(len) { this._size = len }
 }
 
 let a = new BinarySearchTree( // Object No Parent
