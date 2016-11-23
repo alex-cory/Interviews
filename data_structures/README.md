@@ -201,7 +201,7 @@ mnbh.display()
 ```
  - Output from [min-binary-heap.js](./examples/min-binary-heap.js):
  
- ![alt text](./assets/min-binary-heap.gif "Title")
+ ![alt text](./assets/MinBinaryHeap.gif "Title")
 
 #### [Binomial Heaps](https://www.wikiwand.com/en/Binomial_heap)
  - [Example 1](https://github.com/Tyriar/js-binomial-heap/blob/master/index.js)
