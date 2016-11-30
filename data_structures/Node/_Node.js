@@ -169,6 +169,26 @@ export default class Node {
     this._next = node;
   }
 
+  get level () {
+    return this._level
+  }
+  
+  set level (level) {
+    this._level = level
+  }
+
+  get position () {
+    return this._position
+  }
+
+  set position (position) {
+    this._position = position
+  }
+
+  // TODO
+  // has no left or right child
+  isLeaf () {
+  }
 
   /**
    * Prints out information about the current Node.

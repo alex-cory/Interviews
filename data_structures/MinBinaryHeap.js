@@ -63,7 +63,7 @@ export default class MinBinaryHeap {
   addNode(data, position = this.size) {
     if (isUndefined(data)) throw new Error(green('No data provided when adding a new node! [from: insert()]'))
 
-    var node = new Node(data, position)
+    let node = data instanceof Node ? data : new Node(data)
     this.heap[this.size] = node
     this.heapify(node)
     this.size++
