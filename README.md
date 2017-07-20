@@ -16,7 +16,7 @@ Table of Contents
 - [How to Become a 10x Engineer](https://blog.jixee.me/how-to-become-a-10x-engineer/)
 - [Awesome Interviews](https://github.com/MaximAbramchuck/awesome-interview-questions)
 - [Resume Writing Tips](https://paper.dropbox.com/doc/Make-your-resume-great.-jpzkyMEXmx8rHIiHLcC5L)
-- [Interview Prep Guid](https://paper.dropbox.com/doc/Interview-Prep-Guide-vbkHCi7lXsUMnsUt6LEhw)
+- [Interview Prep Guide](https://paper.dropbox.com/doc/Interview-Prep-Guide-vbkHCi7lXsUMnsUt6LEhw)
 
 
 
@@ -68,7 +68,7 @@ A. What You Need to Know
 
 # B. Interview Questions
 
-
+- TODO
 <!--
   Chapter 1 | Arrays and Strings
   
