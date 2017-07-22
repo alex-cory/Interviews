@@ -15,8 +15,6 @@ Table of Contents
 - [Top 10 Algorithms for Coding Interview](http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/)
 - [How to Become a 10x Engineer](https://blog.jixee.me/how-to-become-a-10x-engineer/)
 - [Awesome Interviews](https://github.com/MaximAbramchuck/awesome-interview-questions)
-- [Resume Writing Tips](https://paper.dropbox.com/doc/Make-your-resume-great.-jpzkyMEXmx8rHIiHLcC5L)
-- [Interview Prep Guide](https://paper.dropbox.com/doc/Interview-Prep-Guide-vbkHCi7lXsUMnsUt6LEhw)
 
 
 
