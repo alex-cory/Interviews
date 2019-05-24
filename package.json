@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/alex-cory/Interviews#readme",
   "devDependencies": {
-    "chalk": "^1.1.3",
+    "chalk": "^2.4.2",
     "lodash": "^4.12.0"
   }
 }
